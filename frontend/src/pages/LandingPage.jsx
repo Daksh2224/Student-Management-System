@@ -51,12 +51,12 @@ const LandingPage = () => {
   }, [updates]);
 
   const quickLinks = [
-    { label: 'Examination', icon: FileText, color: '#3B82F6' },
-    { label: 'Results', icon: Award, color: '#10B981' },
-    { label: 'Fee Payment', icon: Landmark, color: '#F59E0B' },
-    { label: 'Research', icon: Globe, color: '#6366F1' },
-    { label: 'Admission', icon: UserCheck, color: '#EF4444' },
-    { label: 'Library', icon: BookOpen, color: '#8B5CF6' }
+    { id: 'examination', label: 'Examination', icon: FileText, color: '#3B82F6' },
+    { id: 'results', label: 'Results', icon: Award, color: '#10B981' },
+    { id: 'fee-payment', label: 'Fee Payment', icon: Landmark, color: '#F59E0B' },
+    { id: 'research', label: 'Research', icon: Globe, color: '#6366F1' },
+    { id: 'admission', label: 'Admission', icon: UserCheck, color: '#EF4444' },
+    { id: 'library', label: 'Library', icon: BookOpen, color: '#8B5CF6' }
   ];
 
   return (
@@ -113,13 +113,13 @@ const LandingPage = () => {
               </div>
               <div className="hsu-vc-msg">
                 <p>"Heritage State University is committed to providing a transformative education that balances tradition with modern innovation. Our mission is to foster a globally competitive research environment."</p>
-                <a href="#">Read More</a>
+                <a href="/portal/admission">Read More</a>
               </div>
             </section>
             
             <section className="hsu-quick-grid" id="exams">
               {quickLinks.map((link, i) => (
-                <div key={i} className="hsu-quick-item">
+                <div key={i} className="hsu-quick-item" onClick={() => navigate(`/portal/${link.id}`)}>
                   <div className="hsu-quick-icon" style={{ color: link.color }}>
                     <link.icon size={32} />
                   </div>
@@ -134,11 +134,11 @@ const LandingPage = () => {
             <section className="hsu-notice-board">
               <div className="hsu-section-title">
                 <h2>Notices & Announcements</h2>
-                <a href="#">View All</a>
+                <a href="/portal/examination">View All</a>
               </div>
               <div className="hsu-notice-list">
                 {data.notices.map((n, i) => (
-                  <div key={i} className="hsu-notice-item">
+                  <div key={i} className="hsu-notice-item" onClick={() => navigate(`/detail/notice/${i + 1}`)}>
                     <div className="hsu-notice-date">{new Date(n.notice_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
                     <p>{n.title} {n.is_new == 1 && <span className="hsu-new-tag">NEW</span>}</p>
                   </div>

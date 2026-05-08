@@ -182,7 +182,7 @@ const CollegeHome = ({ role }) => {
                 }}>
                   {carouselSlides[currentSlide].cta} <ArrowRight size={18} />
                 </button>
-                <button className="carousel-cta-outline" onClick={() => handleAction("Request Info", "Please call our admissions desk at +91 79 2630 1341 for immediate assistance.")}>
+                <button className="carousel-cta-outline" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
                   Watch Video
                 </button>
               </motion.div>
@@ -213,10 +213,10 @@ const CollegeHome = ({ role }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="access-item" onClick={() => handleAction("E-Prospectus", "Downloading the 2026 Zenith Global University prospectus. Please wait...")}><Download size={16} /> Prospectus</div>
-          <div className="access-item" onClick={() => handleAction("Virtual Tour", "Launching the 360-degree VR campus tour.")}><Globe size={16} /> Virtual Tour</div>
-          <div className="access-item" onClick={() => handleAction("Alumni Login", "Redirecting to the Zenith Alumni Association portal.")}><Users size={16} /> Alumni</div>
-          <div className="access-item highlight" onClick={() => handleAction("Apply Online", "Admissions for Fall 2026 are open. Redirecting to application portal...")}><Rocket size={16} /> Apply 2026</div>
+          <div className="access-item" onClick={() => navigate('/portal/prospectus')}><Download size={16} /> Prospectus</div>
+          <div className="access-item" onClick={() => navigate('/portal/virtual-tour')}><Globe size={16} /> Virtual Tour</div>
+          <div className="access-item" onClick={() => navigate('/portal/alumni')}><Users size={16} /> Alumni</div>
+          <div className="access-item highlight" onClick={() => navigate('/portal/admission')}><Rocket size={16} /> Apply 2026</div>
         </motion.div>
 
         {/* University & Stats */}
@@ -242,6 +242,8 @@ const CollegeHome = ({ role }) => {
                   <motion.div
                     key={i}
                     className="ch-timeline-item"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => navigate(`/detail/roadmap/${i + 1}`)}
                     initial={{ opacity: 0, x: -16 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -353,7 +355,7 @@ const CollegeHome = ({ role }) => {
             </div>
             <div className="ad-list">
               {data.exams.map((ex, i) => (
-                <div key={i} className="ad-list-item-hover" onClick={() => handleAction("Exam Details", `Date: ${ex.date} | Status: ${ex.status}. Please download your hall ticket 1 week prior.`)}>
+                <div key={i} className="ad-list-item-hover" onClick={() => navigate(`/detail/exam/${i + 1}`)}>
                   <div className="date-badge">
                     <span className="d-val">{ex.date.split(' ')[1].replace(',', '')}</span>
                     <span className="d-mon">{ex.date.split(' ')[0].toUpperCase()}</span>
@@ -381,12 +383,12 @@ const CollegeHome = ({ role }) => {
             <div className="ch-section-header"><h3>Student Support</h3></div>
             <div className="support-grid">
               {[
-                { label: 'E-Library', icon: BookOpen, color: '#8B5CF6' },
-                { label: 'Psychology', icon: Heart, color: '#F43F5E' },
-                { label: 'Placements', icon: Rocket, color: '#FBBF24' },
-                { label: 'Alumni', icon: Users, color: '#06D6A0' }
+                { id: 'library', label: 'E-Library', icon: BookOpen, color: '#8B5CF6' },
+                { id: 'psychology', label: 'Psychology', icon: Heart, color: '#F43F5E' },
+                { id: 'placements', label: 'Placements', icon: Rocket, color: '#FBBF24' },
+                { id: 'alumni', label: 'Alumni', icon: Users, color: '#06D6A0' }
               ].map((item, i) => (
-                <div key={i} className="support-box" onClick={() => handleAction(item.label, `Redirecting to ${item.label} services. Support available 24/7 for registered students.`)}>
+                <div key={i} className="support-box" onClick={() => navigate(`/portal/${item.id}`)}>
                   <item.icon size={22} color={item.color} />
                   <p>{item.label}</p>
                 </div>

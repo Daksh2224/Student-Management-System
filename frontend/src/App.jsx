@@ -6,6 +6,8 @@ import CollegeHome from './pages/CollegeHome';
 import DepartmentPortal from './pages/DepartmentPortal';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import StudentDashboard from './pages/student/StudentDashboard';
+import InfoPortal from './pages/InfoPortal';
+import DetailView from './pages/DetailView';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 const ProtectedRoute = ({ children, role }) => {
@@ -27,6 +29,8 @@ function App() {
           <Route path="/department/:id" element={<DepartmentPortal />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/portal/:id" element={<InfoPortal />} />
+          <Route path="/detail/:type/:id" element={<DetailView />} />
           
           {/* Admin Routes */}
           <Route path="/admin/dashboard" element={
