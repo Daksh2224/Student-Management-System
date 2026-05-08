@@ -63,7 +63,9 @@
 }
 
 /* ─── Reset ─────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -115,9 +117,17 @@ body::after {
 }
 
 @keyframes orb-drift {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, 20px) scale(1.05); }
-  100% { transform: translate(-10px, 40px) scale(0.95); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(30px, 20px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(-10px, 40px) scale(0.95);
+  }
 }
 
 #root {
@@ -126,13 +136,21 @@ body::after {
 }
 
 /* ─── Typography ─────────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-p, span, a, li {
+p,
+span,
+a,
+li {
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -256,7 +274,9 @@ a:hover {
 
 /* ─── Animated Spinner ───────────────────────────────────────── */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin {
@@ -265,8 +285,13 @@ a:hover {
 
 /* ─── Shine Effect ───────────────────────────────────────────── */
 @keyframes shine {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .shimmer {
@@ -277,8 +302,15 @@ a:hover {
 
 /* ─── Pulse Animation ────────────────────────────────────────── */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4); }
-  50% { box-shadow: 0 0 0 6px transparent; }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px transparent;
+  }
 }
 
 .pulse-dot {
@@ -288,48 +320,53 @@ a:hover {
   background: var(--accent);
   animation: pulse-glow 2s infinite;
 }
- / *    % % %  R e s p o n s i v e   U t i l i t i e s    % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %  * / 
- @ m e d i a   ( m a x - w i d t h :   1 2 0 0 p x )   { 
-     : r o o t   { 
-         - - r a d i u s - l g :   1 6 p x ; 
-         - - r a d i u s - x l :   2 0 p x ; 
-     } 
- } 
- 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-     : r o o t   { 
-         - - r a d i u s - l g :   1 2 p x ; 
-         - - r a d i u s - x l :   1 6 p x ; 
-     } 
-     
-     h 1   {   f o n t - s i z e :   2 r e m   ! i m p o r t a n t ;   } 
-     h 2   {   f o n t - s i z e :   1 . 5 r e m   ! i m p o r t a n t ;   } 
- } 
- 
- . h i d e - o n - m o b i l e   { 
-     @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-         d i s p l a y :   n o n e   ! i m p o r t a n t ; 
-     } 
- } 
- 
- . s h o w - o n l y - m o b i l e   { 
-     d i s p l a y :   n o n e   ! i m p o r t a n t ; 
-     @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-         d i s p l a y :   b l o c k   ! i m p o r t a n t ; 
-     } 
- } 
- 
- . c o n t a i n e r - r e s p o n s i v e   { 
-     w i d t h :   1 0 0 % ; 
-     m a x - w i d t h :   1 4 4 0 p x ; 
-     m a r g i n :   0   a u t o ; 
-     p a d d i n g :   0   2 r e m ; 
- } 
- 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-     . c o n t a i n e r - r e s p o n s i v e   { 
-         p a d d i n g :   0   1 r e m ; 
-     } 
- } 
-  
- 
+
+/* ─── Responsive Utilities ───────────────────────────────────── */
+@media (max-width: 1200px) {
+  :root {
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+.hide-on-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.show-only-mobile {
+  display: none !important;
+
+  @media (max-width: 768px) {
+    display: block !important;
+  }
+}
+
+.container-responsive {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container-responsive {
+    padding: 0 1rem;
+  }
+}

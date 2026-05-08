@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar';
 import './InfoPortal.css';
 
 const iconMap = {
-  FileText, Award, BookOpen, Rocket, Users, Globe, UserCheck, Download
+  FileText, Award, BookOpen, Rocket, Users, Globe, UserCheck, Download, Heart
 };
 
 const InfoPortal = () => {

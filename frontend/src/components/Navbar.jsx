@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { departmentsData } from '../data/departments';
 import { 
   Landmark, Search, Mail, Phone, Globe, ChevronDown, User, LayoutDashboard, LogOut
 } from 'lucide-react';
@@ -10,6 +11,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState('');
 
   const navLinks = [
     { label: 'The University', path: 'university' },
@@ -26,6 +28,21 @@ const Navbar = () => {
       }, 100);
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    
+    // Simple search logic: find first matching department
+    const deptId = Object.keys(departmentsData).find(key => 
+      departmentsData[key].name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    if (deptId) {
+      navigate(`/department/${deptId}`);
+      setSearchQuery('');
     }
   };
 
@@ -99,10 +116,15 @@ const Navbar = () => {
           </nav>
 
           <div className="nav-right-tools">
-            <div className="header-search">
+            <form className="header-search" onSubmit={handleSearch}>
               <Search size={18} />
-              <input type="text" placeholder="Search site..." />
-            </div>
+              <input 
+                type="text" 
+                placeholder="Search departments..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
           </div>
         </div>
       </div>

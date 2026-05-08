@@ -6,14 +6,19 @@ import {
   Calendar, CheckCircle, AlertCircle, TrendingUp, Download
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const StudentDashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('overview');
+  const { view } = useParams();
+  const [activeTab, setActiveTab] = useState(view || 'overview');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  React.useEffect(() => {
+    if (view) setActiveTab(view);
+  }, [view]);
 
   const handleLogout = () => {
     logout();
