@@ -5,23 +5,23 @@ import {
   Phone, Mail, Globe, Users, BookOpen, Calendar, 
   ChevronRight, Award, GraduationCap, Building, 
   MapPin, Clock, Search, ExternalLink, Menu, X,
-  FileText, Landmark, UserCheck
+  FileText, Landmark, UserCheck, TrendingUp, Bell
 } from 'lucide-react';
 import './LandingPage.css';
 import Navbar from '../components/Navbar';
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [tickerIndex, setTickerIndex] = useState(0);
   const [data, setData] = useState({
     ticker: [
-      "Admissions 2026-27: UG/PG Applications now live!",
-      "Heritage State University ranked #1 in Innovation by State Rankings.",
-      "Notification: Mid-Term Examination schedules published."
+      "Admissions 2026: Applications for International Students now live!",
+      "Zenith Global ranked #1 in Academic Excellence by Global Education Forum.",
+      "Notification: Research Grant applications deadline extended to May 30."
     ],
     notices: [
-      { title: "Circular regarding PhD Entrance Exam", notice_date: "2026-04-18", is_new: 1 },
-      { title: "Hostel Admission List - Semester I", notice_date: "2026-04-15", is_new: 0 },
+      { title: "Circular regarding PhD Entrance Exam 2026", notice_date: "2026-04-18", is_new: 1 },
+      { title: "Global Innovation Summit - Registration Open", notice_date: "2026-04-15", is_new: 1 },
+      { title: "Hostel Admission List - Semester IV", notice_date: "2026-04-12", is_new: 0 },
     ],
     events: []
   });
@@ -41,120 +41,109 @@ const LandingPage = () => {
       .catch(err => console.warn("Backend not reached, using mock data"));
   }, []);
 
-  const updates = data.ticker;
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTickerIndex(prev => (prev + 1) % updates.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [updates]);
-
   const quickLinks = [
-    { id: 'examination', label: 'Examination', icon: FileText, color: '#3B82F6' },
-    { id: 'results', label: 'Results', icon: Award, color: '#10B981' },
-    { id: 'fee-payment', label: 'Fee Payment', icon: Landmark, color: '#F59E0B' },
+    { id: 'examination', label: 'Exams', icon: FileText, color: '#4F46E5' },
+    { id: 'results', label: 'Results', icon: Award, color: '#059669' },
+    { id: 'fee-payment', label: 'Fees', icon: Landmark, color: '#F59E0B' },
     { id: 'research', label: 'Research', icon: Globe, color: '#6366F1' },
     { id: 'admission', label: 'Admission', icon: UserCheck, color: '#EF4444' },
-    { id: 'library', label: 'Library', icon: BookOpen, color: '#8B5CF6' }
+    { id: 'library', label: 'Digital Library', icon: BookOpen, color: '#8B5CF6' }
   ];
 
   return (
     <div className="hsu-root">
       <Navbar />
 
-      {/* News Ticker */}
-      <div className="hsu-ticker">
-        <div className="hsu-container">
-          <div className="hsu-ticker-label">LATEST UPDATES</div>
-          <div className="hsu-ticker-content">
-            <motion.p 
-              key={tickerIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
-              {updates[tickerIndex]}
-            </motion.p>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero Slider */}
+      {/* Hero Section */}
       <section className="hsu-hero">
         <img src="/avalon_university_hero.png" alt="Campus" className="hsu-hero-img" />
         <div className="hsu-hero-overlay">
           <div className="hsu-container">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="hsu-hero-box"
             >
-              <h2>Empowering India's Future</h2>
-              <p>Join the 100,000+ students pursuing excellence at Heritage State University.</p>
-              <button className="hsu-btn-primary" onClick={() => navigate('/signup')}>Apply Now 2026-27</button>
+              <div className="badge-glow primary" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>
+                <TrendingUp size={14} /> Admissions Open 2026
+              </div>
+              <h2>Excellence in Every Dimension</h2>
+              <p>Experience world-class education with Zenith Global University's advanced curriculum and industry-leading research initiatives.</p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <button className="btn-glow" onClick={() => navigate('/signup')}>Start Application <ChevronRight size={18} /></button>
+                <button className="btn-glow" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={() => navigate('/college-home')}>Explore Campus</button>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Info Sections */}
+      {/* Main Content */}
       <main className="hsu-main hsu-container">
         <div className="hsu-row">
-          {/* Vice Chancellor's Message */}
-          <div className="hsu-col-left" id="university">
+          {/* Left Column */}
+          <div className="hsu-col-left">
             <section className="hsu-vc-card">
               <div className="hsu-vc-header">
                 <img src="/vice_chancellor.png" alt="Vice Chancellor" />
                 <div className="hsu-vc-info">
-                  <h3>Dr. Rajeshwar Sharma</h3>
-                  <p>Vice Chancellor</p>
+                  <h3>Dr. Sarah Jenkins</h3>
+                  <p>President & Vice Chancellor</p>
                 </div>
               </div>
               <div className="hsu-vc-msg">
-                <p>"Heritage State University is committed to providing a transformative education that balances tradition with modern innovation. Our mission is to foster a globally competitive research environment."</p>
-                <a href="/portal/admission">Read More</a>
+                <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', lineHeight: 1.8 }}>"At Zenith Global, we don't just teach; we inspire. Our mission is to bridge the gap between academic theory and real-world impact, ensuring our graduates are prepared to lead in a globalized economy."</p>
               </div>
             </section>
             
-            <section className="hsu-quick-grid" id="exams">
+            <section className="hsu-quick-grid">
               {quickLinks.map((link, i) => (
-                <div key={i} className="hsu-quick-item" onClick={() => navigate(`/portal/${link.id}`)}>
-                  <div className="hsu-quick-icon" style={{ color: link.color }}>
-                    <link.icon size={32} />
+                <motion.div 
+                  key={i} 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="hsu-quick-item" 
+                  onClick={() => navigate(`/portal/${link.id}`)}
+                >
+                  <div style={{ color: link.color, background: `${link.color}15`, padding: '1rem', borderRadius: '14px' }}>
+                    <link.icon size={28} />
                   </div>
                   <span>{link.label}</span>
-                </div>
+                </motion.div>
               ))}
             </section>
           </div>
 
-          {/* News & Notices */}
-          <div className="hsu-col-right" id="studentCorner">
+          {/* Right Column */}
+          <div className="hsu-col-right">
             <section className="hsu-notice-board">
-              <div className="hsu-section-title">
-                <h2>Notices & Announcements</h2>
-                <a href="/portal/examination">View All</a>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}><Bell size={20} style={{ verticalAlign: 'middle', marginRight: '8px', color: 'var(--primary)' }} /> Notice Board</h3>
+                <button style={{ background: 'none', border: 'none', color: 'var(--primary)', fontWeight: 700, cursor: 'pointer' }} onClick={() => navigate('/portal/examination')}>View All</button>
               </div>
               <div className="hsu-notice-list">
                 {data.notices.map((n, i) => (
                   <div key={i} className="hsu-notice-item" onClick={() => navigate(`/detail/notice/${i + 1}`)}>
-                    <div className="hsu-notice-date">{new Date(n.notice_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
-                    <p>{n.title} {n.is_new == 1 && <span className="hsu-new-tag">NEW</span>}</p>
+                    <div className="hsu-notice-date">{new Date(n.notice_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+                    <p style={{ fontWeight: 600, fontSize: '0.9rem' }}>{n.title} {n.is_new == 1 && <span className="badge-glow accent" style={{ padding: '2px 6px', fontSize: '0.6rem', marginLeft: '8px' }}>NEW</span>}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section className="hsu-upcoming" id="academics">
-              <div className="hsu-section-title">
-                <h2>Academic Calendar & Events</h2>
-              </div>
-              <div className="hsu-event-mini">
-                <div className="hsu-ev-date">22<br/><span>MAY</span></div>
-                <div className="hsu-ev-info">
-                  <h4>Annual Convocation 2026</h4>
-                  <p>Chief Guest: Hon'ble Education Minister</p>
+            <section className="hsu-upcoming" style={{ marginTop: '2rem' }}>
+              <div className="glass-card" style={{ padding: '1.5rem', background: 'linear-gradient(135deg, #0F172A, #1E293B)', color: 'white', border: 'none' }}>
+                <h4 style={{ color: 'white', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Calendar size={18} /> Academic Event</h4>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                  <div style={{ background: 'white', color: '#0F172A', padding: '0.5rem', borderRadius: '8px', textAlign: 'center', minWidth: '50px' }}>
+                    <div style={{ fontSize: '1.2rem', fontWeight: 800 }}>24</div>
+                    <div style={{ fontSize: '0.6rem', fontWeight: 700 }}>MAY</div>
+                  </div>
+                  <div>
+                    <h5 style={{ color: 'white', fontSize: '0.95rem' }}>Global Tech Expo 2026</h5>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>Main Auditorium • 10:00 AM</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -162,47 +151,32 @@ const LandingPage = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="hsu-footer">
+      <footer className="hsu-footer" style={{ background: '#0F172A', color: 'white', padding: '5rem 0 2rem', borderTop: '1px solid #1E293B' }}>
         <div className="hsu-container">
-          <div className="hsu-footer-grid">
-            <div className="hsu-footer-col">
-              <h3>Heritage State University</h3>
-              <p>A leading public state university dedicated to excellence in higher education and research.</p>
-              <div className="hsu-footer-contact">
-                <p><MapPin size={16} /> University Road, Sector 9, Ahmedabad, Gujarat</p>
-                <p><Phone size={16} /> +91 79 2630 1341</p>
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
+            <div>
+              <h3 style={{ color: 'white', marginBottom: '1.5rem' }}>Zenith Global University</h3>
+              <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.7 }}>Empowering the next generation of global leaders through innovation, research, and academic excellence.</p>
             </div>
-            <div className="hsu-footer-col">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="#">About US</a></li>
-                <li><a href="#">Governance</a></li>
-                <li><a href="#">Mission & Vision</a></li>
-                <li><a href="#">University Map</a></li>
+            <div>
+              <h4 style={{ color: 'white', marginBottom: '1.25rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Resources</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {['About Us', 'Admissions', 'Research', 'Campus Life'].map(item => (
+                  <li key={item} style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: '#94A3B8', fontSize: '0.85rem' }}>{item}</a></li>
+                ))}
               </ul>
             </div>
-            <div className="hsu-footer-col">
-              <h3>Student Corner</h3>
-              <ul>
-                <li><a href="#">Examination Schedule</a></li>
-                <li><a href="#">Results Portal</a></li>
-                <li><a href="#">Scholarships</a></li>
-                <li><a href="#">Placement Cell</a></li>
+            <div>
+              <h4 style={{ color: 'white', marginBottom: '1.25rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Student Support</h4>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {['Student Portal', 'Digital Library', 'Help Desk', 'Alumni Network'].map(item => (
+                  <li key={item} style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: '#94A3B8', fontSize: '0.85rem' }}>{item}</a></li>
+                ))}
               </ul>
-            </div>
-            <div className="hsu-footer-col">
-              <h3>Useful Portals</h3>
-              <div className="hsu-portal-links">
-                <a href="#">Digital Gujarat</a>
-                <a href="#">GU Library</a>
-                <a href="#">Alumni Portal</a>
-              </div>
             </div>
           </div>
-          <div className="hsu-footer-bottom">
-            <p>&copy; 2026 Heritage State University. All Rights Reserved. Designed for Educational Purposes.</p>
+          <div style={{ borderTop: '1px solid #1E293B', paddingTop: '2rem', textAlign: 'center', color: '#64748B', fontSize: '0.8rem' }}>
+            <p>&copy; 2026 Zenith Global University. All rights reserved.</p>
           </div>
         </div>
       </footer>
