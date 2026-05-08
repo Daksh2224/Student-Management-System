@@ -1,0 +1,8 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "PHP Backend for Student Management System",
+  "scripts": {
+    "start": "C:\\xampp\\php\\php.exe -S localhost:8000"
+  }
+}

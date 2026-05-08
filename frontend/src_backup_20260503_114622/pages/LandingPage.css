@@ -1,0 +1,500 @@
+/* Heritage State University - Professional Indian Institution Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --hsu-primary: #003366; /* Traditional Deep Blue */
+  --hsu-secondary: #CC0000; /* Emphasis Red */
+  --hsu-accent: #F59E0B; /* Gold */
+  --hsu-text: #1F2937;
+  --hsu-text-light: #6B7280;
+  --hsu-bg: #F3F4F6;
+  --hsu-white: #FFFFFF;
+  --hsu-border: #E5E7EB;
+}
+
+.hsu-root {
+  font-family: 'Poppins', sans-serif;
+  color: var(--hsu-text);
+  background: var(--hsu-white);
+}
+
+.hsu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Top Utility Bar */
+.hsu-top-bar {
+  background: #002244;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
+
+.hsu-top-bar .hsu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hsu-top-left {
+  display: flex;
+  gap: 20px;
+}
+
+.hsu-top-left span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hsu-top-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hsu-top-right a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+
+.hsu-portal-btn {
+  background: var(--hsu-secondary);
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Header */
+.hsu-header {
+  padding: 20px 0;
+  background: white;
+  border-bottom: 3px solid var(--hsu-primary);
+}
+
+.hsu-header .hsu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hsu-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hsu-logo-placeholder {
+  background: var(--hsu-primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.hsu-brand-text h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--hsu-primary);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hsu-brand-text p {
+  font-size: 0.75rem;
+  color: var(--hsu-secondary);
+  margin: 0;
+  font-weight: 600;
+}
+
+.hsu-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.hsu-nav a {
+  text-decoration: none;
+  color: var(--hsu-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.hsu-search-btn {
+  background: transparent;
+  border: none;
+  color: var(--hsu-primary);
+  cursor: pointer;
+}
+
+/* Ticker */
+.hsu-ticker {
+  background: var(--hsu-bg);
+  border-bottom: 1px solid var(--hsu-border);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.hsu-ticker .hsu-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hsu-ticker-label {
+  background: var(--hsu-secondary);
+  color: white;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.hsu-ticker-content {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--hsu-primary);
+}
+
+/* Hero */
+.hsu-hero {
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hsu-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hsu-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+  display: flex;
+  align-items: center;
+}
+
+.hsu-hero-box {
+  max-width: 500px;
+  color: white;
+}
+
+.hsu-hero-box h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hsu-hero-box p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hsu-btn-primary {
+  background: var(--hsu-accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Main Layout */
+.hsu-main {
+  padding: 40px 0;
+}
+
+.hsu-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 40px;
+}
+
+/* VC Card */
+.hsu-vc-card {
+  background: var(--hsu-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 5px solid var(--hsu-primary);
+  margin-bottom: 30px;
+}
+
+.hsu-vc-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.hsu-vc-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.hsu-vc-info h3 {
+  margin: 0;
+  color: var(--hsu-primary);
+  font-weight: 800;
+}
+
+.hsu-vc-info p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--hsu-secondary);
+}
+
+.hsu-vc-msg p {
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--hsu-text);
+}
+
+.hsu-vc-msg a {
+  color: var(--hsu-primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* Quick Grid */
+.hsu-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.hsu-quick-item {
+  background: white;
+  border: 1px solid var(--hsu-border);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.hsu-quick-item:hover {
+  border-color: var(--hsu-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.hsu-quick-icon {
+  margin-bottom: 10px;
+}
+
+.hsu-quick-item span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--hsu-primary);
+}
+
+/* Right Column */
+.hsu-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--hsu-primary);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.hsu-section-title h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--hsu-primary);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hsu-section-title a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--hsu-secondary);
+  text-decoration: none;
+}
+
+.hsu-notice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.hsu-notice-item {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--hsu-border);
+}
+
+.hsu-notice-date {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--hsu-text-light);
+  min-width: 80px;
+}
+
+.hsu-notice-item p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hsu-new-tag {
+  background: var(--hsu-secondary);
+  color: white;
+  font-size: 0.6rem;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.hsu-event-mini {
+  display: flex;
+  gap: 15px;
+  background: #EEF2FF;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.hsu-ev-date {
+  background: white;
+  color: var(--hsu-primary);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-radius: 4px;
+}
+
+.hsu-ev-date span {
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.hsu-ev-info h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.hsu-ev-info p {
+  margin: 5px 0 0;
+  font-size: 0.75rem;
+  color: var(--hsu-text-light);
+}
+
+/* Footer */
+.hsu-footer {
+  background: #002244;
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.hsu-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.hsu-footer-col h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--hsu-accent);
+}
+
+.hsu-footer-col p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.hsu-footer-contact {
+  margin-top: 20px;
+}
+
+.hsu-footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.hsu-footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hsu-footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.hsu-footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.hsu-portal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hsu-portal-links a {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.hsu-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hsu-row { grid-template-columns: 1fr; }
+  .hsu-footer-grid { grid-template-columns: 1fr 1fr; }
+  .hsu-nav { display: none; }
+}

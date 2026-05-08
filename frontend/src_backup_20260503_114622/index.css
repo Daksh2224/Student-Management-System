@@ -1,0 +1,30 @@
+/* ─────────────────────────────────────────────
+   GLOBAL STYLES — variables, resets, base font
+───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-light: rgba(79, 70, 229, 0.1);
+  --bg-slate: #F8FAFC;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --error: #EF4444;
+  --success: #10B981;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-slate);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
