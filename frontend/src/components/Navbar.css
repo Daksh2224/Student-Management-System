@@ -313,12 +313,47 @@
 }
 
 /* ─── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .main-nav-links {
+@media (max-width: 1024px) {
+  .utility-container {
+    padding: 0 1rem;
+  }
+  .contact-info {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-utility-bar {
+    padding: 0.75rem 0;
+  }
+  .utility-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .utility-right {
     display: none;
   }
+  
+  .main-nav-container {
+    height: 60px;
+    padding: 0 1rem;
+  }
+  .brand-text-stack h2 {
+    font-size: 0.95rem;
+  }
+  .nav-logo-box {
+    width: 36px;
+    height: 36px;
+  }
+}
 
-  .nav-right-tools {
+@media (max-width: 900px) {
+  .main-nav-links, .nav-right-tools {
     display: none;
   }
 }
