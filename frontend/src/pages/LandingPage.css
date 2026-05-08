@@ -493,8 +493,46 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .hsu-container { max-width: 960px; }
+  .hsu-hero-box h2 { font-size: 2.2rem; }
+}
+
 @media (max-width: 1024px) {
-  .hsu-row { grid-template-columns: 1fr; }
+  .hsu-row { grid-template-columns: 1fr; gap: 30px; }
   .hsu-footer-grid { grid-template-columns: 1fr 1fr; }
   .hsu-nav { display: none; }
+  .hsu-top-left { display: none; }
+  .hsu-hero { height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .hsu-container { padding: 0 1.25rem; }
+  .hsu-header { padding: 15px 0; }
+  .hsu-logo-placeholder { width: 50px; height: 50px; font-size: 1.2rem; }
+  .hsu-brand-text h1 { font-size: 1.2rem; }
+  .hsu-hero-box h2 { font-size: 1.8rem; }
+  .hsu-hero-box p { font-size: 1rem; }
+  .hsu-quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .hsu-footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .hsu-footer-col h3::after { content: ''; display: block; width: 40px; height: 2px; background: var(--hsu-accent); margin: 10px auto 0; }
+  .hsu-footer-contact p { justify-content: center; }
+  .hsu-ticker-label { font-size: 0.65rem; padding: 3px 8px; margin-right: 10px; }
+  .hsu-ticker-content { font-size: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .hsu-hero-box h2 { font-size: 1.5rem; }
+  .hsu-btn-primary { padding: 10px 20px; font-size: 0.8rem; }
+  .hsu-quick-grid { grid-template-columns: 1fr; }
+  .hsu-vc-header { flex-direction: column; text-align: center; }
+  .hsu-vc-header img { width: 80px; height: 80px; }
+}
+
+/* Projector / Large Screens */
+@media (min-width: 1600px) {
+  .hsu-container { max-width: 1500px; }
+  .hsu-hero { height: 600px; }
+  .hsu-hero-box { max-width: 700px; }
+  .hsu-hero-box h2 { font-size: 3.5rem; }
 }

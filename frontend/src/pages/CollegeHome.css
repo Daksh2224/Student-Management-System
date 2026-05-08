@@ -931,15 +931,46 @@
 }
 
 /* ─── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+  .home-content-container { padding: 3rem 1.5rem; }
+  .carousel-content { padding: 0 3rem; }
   .course-explorer-grid { grid-template-columns: repeat(2, 1fr); }
-  .quick-access-bar { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 800px) {
-  .ad-two-col { grid-template-columns: 1fr; }
-  .footer-main { grid-template-columns: 1fr; }
-  .carousel-content { padding: 0 1.5rem; padding-top: 80px; }
-  .carousel-content h1 { font-size: 2rem; }
-  .course-explorer-grid { grid-template-columns: 1fr 1fr; }
+@media (max-width: 1024px) {
+  .quick-access-bar { grid-template-columns: repeat(2, 1fr); }
+  .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 850px) {
+  .ad-two-col { grid-template-columns: 1fr; gap: 2rem; }
+  .carousel-content h1 { font-size: 2.2rem; }
+  .carousel-content p { font-size: 1rem; max-width: 100%; }
+  .hero-carousel { height: 80vh; min-height: 500px; }
+}
+
+@media (max-width: 640px) {
+  .home-content-container { padding: 2rem 1rem; }
+  .carousel-content { padding: 0 1.25rem; }
+  .carousel-content h1 { font-size: 1.8rem; }
+  .carousel-actions { flex-direction: column; width: 100%; }
+  .carousel-cta, .carousel-cta-outline { width: 100%; justify-content: center; }
+  .quick-access-bar { grid-template-columns: 1fr; }
+  .course-explorer-grid { grid-template-columns: 1fr; }
+  .footer-links-grid { grid-template-columns: 1fr; }
+  .ch-timeline::before { left: 24px; }
+  .ch-timeline-year { width: 40px; height: 40px; font-size: 0.65rem; }
+  .sd-stat-value { font-size: 1rem; }
+  .ad-card { padding: 1.25rem; }
+}
+
+/* Projector / Extra Large Screens */
+@media (min-width: 1600px) {
+  .home-content-container, .carousel-content, .footer-main {
+    max-width: 1600px;
+  }
+  .carousel-content h1 { font-size: 4.5rem; }
+  .carousel-content p { font-size: 1.4rem; max-width: 700px; }
+  .quick-access-bar { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 }

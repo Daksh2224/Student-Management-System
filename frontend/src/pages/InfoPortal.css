@@ -170,19 +170,60 @@
 @media (max-width: 968px) {
   .portal-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .portal-title-section {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    padding: 2rem 0;
   }
   
   .portal-header {
     padding: 2rem 0;
+    margin-top: 56px;
+  }
+
+  .portal-title-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
   }
   
   .portal-title-section h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .portal-subtitle {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  .portal-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-container {
+    padding: 0 1rem;
+  }
+  
+  .portal-section-card {
+    padding: 1.25rem;
+  }
+
+  .portal-title-section h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Projector / Large Screens */
+@media (min-width: 1600px) {
+  .portal-container {
+    max-width: 1400px;
+  }
+  .portal-title-section h1 {
+    font-size: 3.5rem;
+  }
+  .portal-grid {
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
   }
 }
