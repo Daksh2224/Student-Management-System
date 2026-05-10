@@ -88,7 +88,7 @@ const Navbar = () => {
             ))}
 
             {/* Portal Dropdown */}
-            {user && (
+            {user ? (
               <div className="nav-portal-dropdown">
                 <button 
                   className="main-nav-link-item active-portal"
@@ -105,6 +105,13 @@ const Navbar = () => {
                    <button onClick={logout} className="logout-btn"><LogOut size={14} /> Sign Out</button>
                 </div>
               </div>
+            ) : (
+              <button 
+                className="main-nav-link-item portal-login-btn"
+                onClick={() => navigate('/login')}
+              >
+                Sign In
+              </button>
             )}
           </nav>
 

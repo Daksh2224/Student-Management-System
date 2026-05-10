@@ -349,9 +349,6 @@ const CollegeHome = ({ role }) => {
                 </div>
               ))}
             </div>
-            <div className="portal-actions">
-              <button className="primary-portal-btn" onClick={() => window.location.href = '/login'}>Student/Parent Login</button>
-            </div>
           </motion.div>
 
           <motion.div
