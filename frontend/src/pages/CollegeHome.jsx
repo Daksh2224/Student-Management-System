@@ -137,7 +137,7 @@ const CollegeHome = ({ role }) => {
             transition={{ duration: 0.9 }}
             className="carousel-slide"
             style={{
-              backgroundImage: `linear-gradient(to right, rgba(6,6,26,0.92) 30%, rgba(6,6,26,0.5) 70%, rgba(6,6,26,0.2) 100%), url(${carouselSlides[currentSlide].image})`
+              backgroundImage: `linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.7) 40%, rgba(2, 6, 23, 0.2) 100%), url(${carouselSlides[currentSlide].image})`
             }}
           >
             <div className="carousel-content">
