@@ -71,8 +71,8 @@ const Navbar = () => {
               <Landmark size={28} />
             </div>
             <div className="brand-text-stack">
-              <h2>Zenith Global</h2>
-              <p>University of Excellence</p>
+              <h2>SPIT Pune</h2>
+              <p>Savitribai Phule Institute</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ const Navbar = () => {
             ))}
 
             {/* Portal Dropdown */}
-            {user ? (
+            {user && (
               <div className="nav-portal-dropdown">
                 <button 
                   className="main-nav-link-item active-portal"
@@ -98,20 +98,13 @@ const Navbar = () => {
                 </button>
                 <div className="dropdown-menu">
                    <div className="dropdown-header">
-                      <strong>{user.name}</strong>
+                      <strong>{user.full_name}</strong>
                       <p>{user.role?.toUpperCase()}</p>
                    </div>
                    <button onClick={() => navigate(`/${user.role}/dashboard/overview`)}><LayoutDashboard size={14} /> Dashboard</button>
                    <button onClick={logout} className="logout-btn"><LogOut size={14} /> Sign Out</button>
                 </div>
               </div>
-            ) : (
-              <button 
-                className="main-nav-link-item portal-login-btn"
-                onClick={() => navigate('/login')}
-              >
-                Sign In
-              </button>
             )}
           </nav>
 
