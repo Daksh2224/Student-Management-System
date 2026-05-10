@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './auth.css';
 import { useNavigate, Link } from 'react-router-dom';
-import { LogIn, User, ShieldCheck, AlertCircle, Landmark, BookOpen, CreditCard, ClipboardCheck } from 'lucide-react';
+import { LogIn, User, Users, ShieldCheck, AlertCircle, Landmark, BookOpen, CreditCard, ClipboardCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 

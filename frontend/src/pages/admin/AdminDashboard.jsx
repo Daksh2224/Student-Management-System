@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const { view } = useParams();
   const [activeTab, setActiveTab] = useState(view || 'overview');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
