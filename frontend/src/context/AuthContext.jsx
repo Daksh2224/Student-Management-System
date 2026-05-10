@@ -15,10 +15,9 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = (email, role) => {
-    const newUser = { email, role, name: role === 'admin' ? 'Admin Professor' : 'Alex Johnson' };
-    setUser(newUser);
-    localStorage.setItem('user', JSON.stringify(newUser));
+  const login = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const logout = () => {

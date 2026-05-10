@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import CollegeHome from './pages/CollegeHome';
+import LandingPage from './pages/LandingPage';
 import DepartmentPortal from './pages/DepartmentPortal';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import StudentDashboard from './pages/student/StudentDashboard';
+import ParentDashboard from './pages/parent/ParentDashboard';
 import InfoPortal from './pages/InfoPortal';
 import DetailView from './pages/DetailView';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -54,6 +56,13 @@ function App() {
           <Route path="/student/dashboard/:view" element={
             <ProtectedRoute role="student">
               <StudentDashboard />
+            </ProtectedRoute>
+          } />
+
+          {/* Parent Routes */}
+          <Route path="/parent/dashboard" element={
+            <ProtectedRoute role="parent">
+              <ParentDashboard />
             </ProtectedRoute>
           } />
 

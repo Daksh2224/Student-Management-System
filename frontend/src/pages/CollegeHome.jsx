@@ -38,39 +38,25 @@ const CollegeHome = ({ role }) => {
 
   const carouselSlides = [
     {
-      title: "Zenith Global University",
-      subtitle: "Nurturing Leaders for a Better Tomorrow. Accredited A++ by NAAC.",
+      title: "Savitribai Phule Institute",
+      subtitle: "Empowering India's Future through Technical Excellence. Accredited A++ by NAAC.",
       image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1986&auto=format&fit=crop",
       cta: "Explore Our Heritage",
       link: "#university"
     },
     {
       title: "Admissions Open 2026–27",
-      subtitle: "Applications for UG and PG programs are now live. Embark on your journey of excellence.",
+      subtitle: "Applications for B.E. and M.E. programs are now live at SPIT Pune. Register today.",
       image: "https://images.unsplash.com/photo-1523050335102-c32509145861?q=80&w=2070&auto=format&fit=crop",
-      cta: "Apply Now",
+      cta: "Apply Online",
       link: "/signup"
     },
     {
-      title: "Innovation Hub & Research",
-      subtitle: "State-of-the-art labs focused on AI, Sustainable Energy, and Life Sciences.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
-      cta: "View Research Projects",
-      link: "#academics"
-    },
-    {
-      title: "Global Placement Record",
-      subtitle: "Over 95% placement rate with top recruiters like Google, Microsoft, and TATA.",
+      title: "Top Tier Placements",
+      subtitle: "Over 95% placement rate with top recruiters like TCS, Infosys, and Google.",
       image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop",
-      cta: "Placement Report",
+      cta: "Placement Record",
       link: "#university"
-    },
-    {
-      title: "Holistic Campus Life",
-      subtitle: "A perfect blend of culture, sports, and academia. 100+ student clubs.",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop",
-      cta: "Student Experience",
-      link: "#studentCorner"
     },
   ];
 
@@ -89,25 +75,25 @@ const CollegeHome = ({ role }) => {
 
   const data = {
     info: {
-      history: "Established in 1982, Zenith Global University has consistently ranked among the top 1% of higher education institutions globally."
+      history: "Established in 1985 in the heart of Pune, SPIT has consistently ranked among the top technical institutes in Maharashtra, fostering innovation and engineering excellence."
     },
     futurePlans: [
-      { year: '2026', title: 'Smart Campus Expansion', desc: 'Integration of IoT for real-time facility management and automated campus security.' },
-      { year: '2027', title: 'Advanced Robotics Wing', desc: 'Establishing a state-funded center for Industrial Automation and Human-Robot Interaction.' },
-      { year: '2028', title: 'Carbon-Neutral Certification', desc: 'Solar-microgrids and zero-waste policy to become an eco-leader.' }
+      { year: '2026', title: 'Smart Campus Expansion', desc: 'Integration of IoT for real-time facility management across the Pune campus.' },
+      { year: '2027', title: 'Advanced Robotics Wing', desc: 'Establishing a state-of-the-art center for AI and Human-Robot Interaction.' },
+      { year: '2028', title: 'Green Campus Initiative', desc: 'Transitioning to 100% solar power and zero-waste policy.' }
     ],
     exams: [
       { title: 'Semester End Exams', date: 'May 15, 2026', status: 'Upcoming' },
-      { title: 'PhD Entrance Test', date: 'June 02, 2026', status: 'Open' },
+      { title: 'GATE 2027 Preparation', date: 'June 02, 2026', status: 'Ongoing' },
       { title: 'Entrance 2026 Phase II', date: 'July 10, 2026', status: 'Scheduled' }
     ]
   };
 
   const statsList = [
-    { label: 'Students Enrolled', value: '15,000+', icon: Users, color: '#8B5CF6', bg: 'rgba(124,58,237,0.15)', trend: 'Global Diversity' },
+    { label: 'Students Enrolled', value: '15,000+', icon: Users, color: '#8B5CF6', bg: 'rgba(124,58,237,0.15)', trend: 'Pan-India Reach' },
     { label: 'Ranking (NIRF)', value: '#12', icon: TrendingUp, color: '#06D6A0', bg: 'rgba(6,214,160,0.12)', trend: 'Top 15 India' },
     { label: 'Research Papers', value: '2,500+', icon: BookOpen, color: '#FBBF24', bg: 'rgba(251,191,36,0.12)', trend: 'Annual Output' },
-    { label: 'Campus Size', value: '150 Acres', icon: Building, color: '#F43F5E', bg: 'rgba(244,63,94,0.12)', trend: 'Modern Facilities' },
+    { label: 'Campus Placement', value: '98%', icon: Rocket, color: '#F43F5E', bg: 'rgba(244,63,94,0.12)', trend: 'Avg. 12 LPA' },
   ];
 
   return (
@@ -161,7 +147,7 @@ const CollegeHome = ({ role }) => {
                 transition={{ delay: 0.2 }}
                 className="slide-label"
               >
-                LEADING EDUCATION 2026
+                SPIT PUNE • ACADEMIC SESSION 2026-27
               </motion.div>
               <motion.h1 initial={{ y: 28, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.35 }}>
                 {carouselSlides[currentSlide].title}
@@ -182,8 +168,8 @@ const CollegeHome = ({ role }) => {
                 }}>
                   {carouselSlides[currentSlide].cta} <ArrowRight size={18} />
                 </button>
-                <button className="carousel-cta-outline" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
-                  Watch Video
+                <button className="carousel-cta-outline" onClick={() => navigate('/portal/prospectus')}>
+                  View Prospectus
                 </button>
               </motion.div>
             </div>
@@ -216,7 +202,7 @@ const CollegeHome = ({ role }) => {
           <div className="access-item" onClick={() => navigate('/portal/prospectus')}><Download size={16} /> Prospectus</div>
           <div className="access-item" onClick={() => navigate('/portal/virtual-tour')}><Globe size={16} /> Virtual Tour</div>
           <div className="access-item" onClick={() => navigate('/portal/alumni')}><Users size={16} /> Alumni</div>
-          <div className="access-item highlight" onClick={() => navigate('/portal/admission')}><Rocket size={16} /> Apply 2026</div>
+          <div className="access-item highlight" onClick={() => navigate('/signup')}><Rocket size={16} /> Apply Online</div>
         </motion.div>
 
         {/* University & Stats */}
@@ -231,12 +217,12 @@ const CollegeHome = ({ role }) => {
             transition={{ duration: 0.55 }}
           >
             <div className="ch-section-header">
-              <h3>University Heritage</h3>
-              <span className="ad-badge-success">ISO 9001:2015 Certified</span>
+              <h3>Institutional Legacy</h3>
+              <span className="ad-badge-success">A++ Grade (NAAC)</span>
             </div>
-            <p className="description-text">{data.info.history} Our institution stands as a lighthouse of knowledge, integrating ancient wisdom with modern technology.</p>
+            <p className="description-text">{data.info.history} We are dedicated to providing world-class technical education that is rooted in Indian values and global standards.</p>
             <div className="vision-timeline">
-              <h4>Future Roadmap</h4>
+              <h4>Strategy 2026-2028</h4>
               <div className="ch-timeline">
                 {data.futurePlans.map((plan, i) => (
                   <motion.div
@@ -282,12 +268,12 @@ const CollegeHome = ({ role }) => {
             >
               <div className="ad-card-header">
                 <Trophy size={18} color="#FBBF24" />
-                <h3>Recent Honors</h3>
+                <h3>Pune Ranking</h3>
               </div>
               <ul className="feat-list">
-                <li>Best Private University — Education World</li>
+                <li>Ranked #1 Engineering College in Pune</li>
                 <li>Innovation Leadership Award 2025</li>
-                <li>Top 5% Research Citations Globally</li>
+                <li>Top Placement Records in Maharashtra</li>
               </ul>
             </motion.div>
           </div>
@@ -304,14 +290,10 @@ const CollegeHome = ({ role }) => {
           transition={{ duration: 0.5 }}
         >
           <div className="ch-section-header">
-            <h3>Academic Departments</h3>
-            <div className="search-pill">
-              <Search size={14} />
-              <input type="text" placeholder="Find your program..." onChange={e => setSearchQuery(e.target.value)} />
-            </div>
+            <h3>Specialized Departments</h3>
           </div>
           <div className="course-explorer-grid">
-            {Object.values(departmentsData).filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase())).map((c, i) => (
+            {Object.values(departmentsData).map((c, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -6 }}
@@ -327,11 +309,11 @@ const CollegeHome = ({ role }) => {
                 <div className="program-card-content">
                   <h4>{c.name}</h4>
                   <div className="program-meta">
-                    <span>{c.duration}</span> • <span>{c.intake}</span>
+                    <span>{c.duration}</span> • <span>{c.intake} Students/Yr</span>
                   </div>
                   <p className="program-details">{c.overview}</p>
                   <div className="program-footer">
-                    <span className="learn-more" onClick={() => navigate(`/department/${c.id}`)} style={{ cursor: 'pointer' }}>View Department Portal <ArrowRight size={13} /></span>
+                    <span className="learn-more" onClick={() => navigate(`/department/${c.id}`)} style={{ cursor: 'pointer' }}>Portal <ArrowRight size={13} /></span>
                   </div>
                 </div>
               </motion.div>
@@ -350,8 +332,8 @@ const CollegeHome = ({ role }) => {
             viewport={{ once: true }}
           >
             <div className="ch-section-header">
-              <h3>Examination & Results</h3>
-              <span className="live-tag">LIVE</span>
+              <h3>Examination Cell</h3>
+              <span className="live-tag">LIVE PORTAL</span>
             </div>
             <div className="ad-list">
               {data.exams.map((ex, i) => (
@@ -368,7 +350,7 @@ const CollegeHome = ({ role }) => {
               ))}
             </div>
             <div className="portal-actions">
-              <button className="primary-portal-btn" onClick={() => window.location.href = '/login'}>Access Student Portal</button>
+              <button className="primary-portal-btn" onClick={() => window.location.href = '/login'}>Student/Parent Login</button>
             </div>
           </motion.div>
 
@@ -380,13 +362,13 @@ const CollegeHome = ({ role }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="ch-section-header"><h3>Student Support</h3></div>
+            <div className="ch-section-header"><h3>Institutional Support</h3></div>
             <div className="support-grid">
               {[
-                { id: 'library', label: 'E-Library', icon: BookOpen, color: '#8B5CF6' },
-                { id: 'psychology', label: 'Psychology', icon: Heart, color: '#F43F5E' },
-                { id: 'placements', label: 'Placements', icon: Rocket, color: '#FBBF24' },
-                { id: 'alumni', label: 'Alumni', icon: Users, color: '#06D6A0' }
+                { id: 'library', label: 'E-Resources', icon: BookOpen, color: '#8B5CF6' },
+                { id: 'counseling', label: 'Counseling', icon: Heart, color: '#F43F5E' },
+                { id: 'tpo', label: 'Placement Cell', icon: Rocket, color: '#FBBF24' },
+                { id: 'alumni', label: 'Alumni Network', icon: Users, color: '#06D6A0' }
               ].map((item, i) => (
                 <div key={i} className="support-box" onClick={() => navigate(`/portal/${item.id}`)}>
                   <item.icon size={22} color={item.color} />
@@ -395,7 +377,7 @@ const CollegeHome = ({ role }) => {
               ))}
             </div>
             <div className="helpdesk-strip">
-              <Phone size={13} /> 24x7 Helpdesk: 1800-ZENITH-EDU
+              <Phone size={13} /> Admission Help: 1800-SPIT-PUNE
             </div>
           </motion.div>
         </div>
@@ -406,32 +388,32 @@ const CollegeHome = ({ role }) => {
         <div className="footer-main">
           <div className="footer-brand-section">
             <div className="f-logo"><Landmark size={24} /></div>
-            <h3>Zenith Global University</h3>
-            <p>Knowledge • Excellence • Leadership</p>
+            <h3>Savitribai Phule Institute</h3>
+            <p>Knowledge • Excellence • Service</p>
           </div>
           <div className="footer-links-grid">
             <div className="f-col">
               <h4>Quick Links</h4>
-              <a href="#">Governing Body</a>
-              <a href="#">Mandatory Disclosures</a>
-              <a href="#">Annual Report</a>
+              <a href="#">NAAC Disclosures</a>
+              <a href="#">Mandatory Reports</a>
+              <a href="#">Internal Complaint Cell</a>
             </div>
             <div className="f-col">
               <h4>Academics</h4>
               <a href="#">Research Ethics</a>
-              <a href="#">Course Catalog</a>
-              <a href="#">International Cell</a>
+              <a href="#">Placement Stats</a>
+              <a href="#">International Ties</a>
             </div>
             <div className="f-col">
               <h4>Contact Us</h4>
-              <p>Knowledge City, University Road</p>
-              <p>Email: info@zenith.edu</p>
-              <p>Tel: +91 79 2630 1341</p>
+              <p>Ganeshkhind Road, Pune 411007</p>
+              <p>Email: contact@spit.edu</p>
+              <p>Tel: +91 20 2560 1101</p>
             </div>
           </div>
         </div>
         <div className="footer-legal">
-          <p>© 2026 Zenith Global University. ISO 9001:2015. All Rights Reserved.</p>
+          <p>© 2026 Savitribai Phule Institute of Technology (SPIT Pune). All Rights Reserved.</p>
         </div>
       </footer>
     </div>

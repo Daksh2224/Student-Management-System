@@ -27,7 +27,7 @@ try {
     $response['attendance'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // 3. Get Fees
-    $stmt = $conn->prepare("SELECT term, amount, due_date, status, paid_amount FROM fee_records WHERE student_id = :uid");
+    $stmt = $conn->prepare("SELECT term, total_amount, paid_amount, due_date, status FROM fee_records WHERE student_id = :uid");
     $stmt->execute(['uid' => $user_id]);
     $response['fees'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,10 +36,11 @@ try {
     $stmt->execute();
     $response['exams'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // 5. Get Notifications (Mock or from table)
+    // 5. Get Notifications
     $response['notifications'] = [
-        ["id" => 1, "text" => "Final Exam schedule has been published.", "type" => "info", "time" => "2h ago"],
-        ["id" => 2, "text" => "Your fee payment for Sem 4 is pending.", "type" => "warning", "time" => "1d ago"]
+        ["id" => 1, "text" => "Semester IV Internal Assessment dates announced.", "type" => "info", "time" => "2h ago"],
+        ["id" => 2, "text" => "Your library book 'Data Structures' is due tomorrow.", "type" => "warning", "time" => "1d ago"],
+        ["id" => 3, "text" => "Placement registration for TCS is now open.", "type" => "success", "time" => "3h ago"]
     ];
 
     echo json_encode($response);

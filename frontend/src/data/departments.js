@@ -107,5 +107,52 @@ export const departmentsData = {
       "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?q=80&w=2070&auto=format&fit=crop"
     ]
+  },
+  "ai-data-science": {
+    id: "ai-data-science",
+    name: "Artificial Intelligence & Data Science",
+    icon: "🤖",
+    coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    mission: "To empower students with advanced analytical skills and AI capabilities to solve complex real-world problems.",
+    overview: "This specialized department focuses on the intersection of big data, machine learning, and cognitive computing. Students work on real-world projects involving natural language processing, computer vision, and predictive analytics.",
+    duration: "4 Years B.Tech",
+    intake: "60 Seats",
+    curriculum: [
+      { year: "Year 1", subjects: ["Python for AI", "Statistics", "Calculus", "Digital Logic"] },
+      { year: "Year 2", subjects: ["Machine Learning", "Database Systems", "Linear Algebra", "Data Visualization"] },
+      { year: "Year 3", subjects: ["Deep Learning", "Natural Language Processing", "Big Data Analytics", "Ethics in AI"] },
+      { year: "Year 4", subjects: ["Computer Vision", "Reinforcement Learning", "AI Capstone Project", "Research Thesis"] }
+    ],
+    faculty: [
+      { name: "Dr. Andrew Ng", role: "Special Advisor", expertise: "Deep Learning, AI Education", image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=200&auto=format&fit=crop" },
+      { name: "Fei-Fei Li", role: "Professor", expertise: "Computer Vision, Cognitive AI", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2070&auto=format&fit=crop"
+    ]
+  },
+  "liberal-arts": {
+    id: "liberal-arts",
+    name: "Liberal Arts & Humanities",
+    icon: "🎭",
+    coverImage: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop",
+    mission: "To foster multi-disciplinary thinking, creative expression, and critical engagement with the world's cultural heritage.",
+    overview: "Our Liberal Arts program encourages students to explore diverse fields including Philosophy, Literature, Sociology, and Psychology. It emphasizes critical thinking, effective communication, and a holistic understanding of human society.",
+    duration: "3 Years B.A.",
+    intake: "40 Seats",
+    curriculum: [
+      { year: "Year 1", subjects: ["World Literature", "Philosophy 101", "Sociological Perspectives", "Academic Writing"] },
+      { year: "Year 2", subjects: ["Political Theory", "Psychology of Behavior", "Cultural Anthropology", "Creative Writing"] },
+      { year: "Year 3", subjects: ["Globalization & Society", "Ethics & Modernity", "Interdisciplinary Seminar", "Graduation Project"] }
+    ],
+    faculty: [
+      { name: "Dr. Maya Angelou", role: "Professor Emerita", expertise: "Literature, Poetry", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" },
+      { name: "Noam Chomsky", role: "Visiting Faculty", expertise: "Linguistics, Political Science", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" }
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1491841573634-28140fc7ced7?q=80&w=2070&auto=format&fit=crop"
+    ]
   }
 };

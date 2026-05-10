@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  ArrowLeft, FileText, Award, BookOpen, Rocket, Users, Globe, UserCheck, Download, Mail, Phone, MapPin 
+  ArrowLeft, FileText, Award, BookOpen, Rocket, Users, Globe, UserCheck, Download, Mail, Phone, MapPin, Heart 
 } from 'lucide-react';
 import { portalsData } from '../data/portals';
 import Navbar from '../components/Navbar';
