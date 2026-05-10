@@ -6,13 +6,15 @@
   display: flex;
   min-height: 100vh;
   background-color: var(--bg-root);
+  background-image: radial-gradient(circle at 0% 0%, rgba(67, 56, 202, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
 }
 
 /* ─── Sidebar ────────────────────────────────────────────────── */
 .dashboard-sidebar {
   width: 280px;
-  background: #FFFFFF;
-  border-right: 1px solid #E2E8F0;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -20,7 +22,8 @@
   bottom: 0;
   left: 0;
   z-index: 50;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-base);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
 }
 
 .sidebar-header {
@@ -284,21 +287,34 @@
 }
 
 .stat-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  transition: all 0.25s;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  gap: 1.25rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 100% 0%, var(--primary-subtle), transparent 70%);
+  opacity: 0.5;
 }
 
 .stat-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  border-color: #A5B4FC;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
 }
 
 .stat-icon-wrapper {
@@ -333,11 +349,16 @@
 }
 
 .panel-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-base);
+}
+
+.panel-card:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .panel-header {

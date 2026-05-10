@@ -6,6 +6,7 @@
   background: var(--bg-root);
   min-height: 100vh;
   color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
 }
 
 /* ─── Hero Carousel ──────────────────────────────────────────── */
@@ -55,14 +56,14 @@
 }
 
 .carousel-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 900;
   color: #FFFFFF;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  max-width: 800px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  max-width: 900px;
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .carousel-content p {
@@ -140,26 +141,26 @@
 }
 
 .access-item {
-  background: var(--bg-glass);
-  backdrop-filter: blur(16px);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   color: var(--text-primary);
-  font-weight: 700;
-  transition: all 0.3s;
+  font-weight: 800;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-lg);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .access-item:hover {
-  transform: translateY(-8px);
-  background: #FFFFFF;
-  border-color: var(--primary);
+  transform: translateY(-12px);
+  border-color: var(--primary-light);
   box-shadow: var(--shadow-xl);
 }
 
@@ -234,10 +235,10 @@
 
 /* ─── Footer ─────────────────────────────────────────────────── */
 .institutional-footer {
-  background: #0F172A;
+  background: #020617; /* Very Deep Navy */
   color: white;
-  padding: 5rem 2rem 2rem;
-  border-top: 1px solid #1E293B;
+  padding: 6rem 2rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-main {

@@ -6,48 +6,52 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  /* Brand Colors */
-  --primary: #4F46E5;
-  --primary-light: #6366F1;
-  --primary-glow: rgba(79, 70, 229, 0.2);
-  --primary-subtle: rgba(79, 70, 229, 0.08);
-  --accent: #059669;
-  --accent-glow: rgba(5, 150, 105, 0.2);
-  --accent-subtle: rgba(5, 150, 105, 0.08);
-  --gold: #F59E0B;
+  /* Brand Colors - Deep Institutional Blue with Modern Indigo */
+  --primary: #1e1b4b; /* Deep Navy */
+  --primary-light: #4338ca; /* Indigo */
+  --primary-glow: rgba(67, 56, 202, 0.2);
+  --primary-subtle: rgba(67, 56, 202, 0.08);
+  
+  --accent: #10b981; /* Emerald */
+  --accent-glow: rgba(16, 185, 129, 0.2);
+  --accent-subtle: rgba(16, 185, 129, 0.08);
+  
+  --gold: #f59e0b; /* Amber */
   --gold-glow: rgba(245, 158, 11, 0.2);
-  --danger: #EF4444;
+  
+  --danger: #ef4444; /* Rose/Red */
   --danger-subtle: rgba(239, 68, 68, 0.08);
-  --warning: #F59E0B;
+  
+  --warning: #f59e0b;
   --warning-subtle: rgba(245, 158, 11, 0.08);
-  --info: #0EA5E9;
+  
+  --info: #0ea5e9;
 
-  /* Background Layers */
-  --bg-root: #F8FAFC;
-  --bg-surface: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F1F5F9;
-  --bg-glass: rgba(255, 255, 255, 0.85);
-  --bg-input: #F1F5F9;
+  /* Background Layers - Cleaner Grays */
+  --bg-root: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  --bg-input: #f1f5f9;
 
-  /* Text */
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
-  --text-inverse: #FFFFFF;
+  /* Text - High Contrast */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
 
-  /* Borders */
-  --border: #E2E8F0;
-  --border-active: #818CF8;
-  --border-glow: rgba(99, 102, 241, 0.3);
+  /* Borders - Subtler */
+  --border: #e2e8f0;
+  --border-active: #818cf8;
+  --border-glow: rgba(99, 102, 241, 0.2);
 
-  /* Shadows */
+  /* Premium Shadows - Multi-layered */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 15px rgba(79, 70, 229, 0.15);
-  --shadow-accent-glow: 0 0 15px rgba(5, 150, 105, 0.15);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 20px rgba(67, 56, 202, 0.15);
 
   /* Layout */
   --radius-sm: 8px;
